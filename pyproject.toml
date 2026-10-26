@@ -1,0 +1,24 @@
+[build-system]
+# Setuptools собирает устанавливаемый пакет из исходников проекта.
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alice-gpt-bridge"
+version = "0.1.0"
+description = "Сервер для взаимодействия Яндекс Диалогов с LLM через API"
+requires-python = ">=3.11"
+dependencies = ["openai"]
+
+[project.optional-dependencies]
+# Инструменты разработки устанавливаются отдельно от зависимостей приложения.
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+# Исходники отделены от конфигурации и тестов каталогом src.
+where = ["src"]
+namespaces = false
+
+[tool.pytest.ini_options]
+# Ограничиваем поиск тестов выделенным для них каталогом.
+testpaths = ["tests"]

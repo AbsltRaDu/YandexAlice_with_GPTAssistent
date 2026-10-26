@@ -1,0 +1,9 @@
+.python-version
+AGENTS.md
+
+# Локальные результаты импорта, тестирования и сборки пакета.
+__pycache__/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
